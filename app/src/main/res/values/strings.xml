@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">PR Calculator</string>
+    <string name="action_settings">Settings</string>
+    <string name="message_Reps">Reps</string>
+    <string name="message_Weight">Weight</string>
+    <string name="calcButton">Calculate!</string>
+    <string name="message_CalcedMax">Your calculated max =</string>
+    <string name="Pounds">Pounds</string>
+    <string name="Kilograms">Kilograms</string>
+
+</resources>
