@@ -1,0 +1,50 @@
+{
+  "project_info": {
+    "project_number": "409592513375",
+    "firebase_url": "https://prcalculator.firebaseio.com",
+    "project_id": "prcalculator",
+    "storage_bucket": "prcalculator.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:409592513375:android:0610cdd87009a3a9",
+        "android_client_info": {
+          "package_name": "com.PRCalc.zac.prcalculator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "409592513375-narfbpbd7mojktt0p4n9grv62lhpqt8o.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.PRCalc.zac.prcalculator",
+            "certificate_hash": "3cf6880b79ca7853eca1ec99816e36398e616afd"
+          }
+        },
+        {
+          "client_id": "409592513375-k3rfe92b6of4aj4asuv08k3252nksqgc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlSlL4a1J_ygr-gIImSiWYaZ_zhuwGDRQ"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -13,13 +13,16 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.MobileAds;
+
+import com.google.firebase.analytics.FirebaseAnalytics;
 
 
 public class MainActivity extends AppCompatActivity {
-
-
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     protected static final String TAG;
 
@@ -51,21 +54,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Switch switch1 = (Switch) findViewById(R.id.switch1);
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
-        switch1.setOnCheckedChangeListener(
-                new CompoundButton.OnCheckedChangeListener() {
-                    @Override
-                    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                        if (isChecked) {
-                            lbs_or_kgs = " kilograms.";
-                        } else {
-                            lbs_or_kgs = " pounds.";
-                        }
-                    }
-                }
-        );
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-4921192116508863~3487604832");
 
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        mAdView.loadAd(adRequest);
 
         Button calcButton = (Button) findViewById(R.id.calcButton);
 
@@ -100,6 +97,7 @@ public class MainActivity extends AppCompatActivity {
                         }
 
                         message_CalcedMax.setText(message);
+                        message_CalcedMax.setVisibility(View.VISIBLE);
                     }
                 }
         );

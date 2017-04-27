@@ -1,83 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:showIn="@layout/activity_main" tools:context=".MainActivity"
-    android:background="#555599">
+    tools:showIn="@layout/activity_main"
+    tools:context=".MainActivity"
+    android:background="#BBDEFB">
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/calcButton"
         android:id="@+id/calcButton"
+        android:layout_marginTop="44dp"
         android:layout_below="@+id/reps"
         android:layout_centerHorizontal="true" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
         android:id="@+id/weight"
-        android:layout_marginTop="41dp"
-        android:text="@string/message_Weight"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Weight"
+        android:inputType="number"
         android:layout_alignParentTop="true"
-        android:layout_alignLeft="@+id/reps"
-        android:layout_alignStart="@+id/reps" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="24dp" />
 
-    <Switch
+    <EditText
+        android:id="@+id/reps"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/switch1"
-        android:checked="false"
+        android:ems="10"
+        android:hint="Reps"
+        android:inputType="number"
+        android:layout_marginTop="47dp"
         android:layout_below="@+id/weight"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/Pounds"
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/switch1"
         android:layout_alignLeft="@+id/weight"
         android:layout_alignStart="@+id/weight" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceMedium"
-        android:text="@string/Kilograms"
-        android:id="@+id/textView2"
-        android:layout_alignBottom="@+id/switch1"
-        android:layout_alignRight="@+id/weight"
-        android:layout_alignEnd="@+id/weight" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/reps"
-        android:text="@string/message_Reps"
-        android:layout_below="@+id/switch1"
-        android:layout_centerHorizontal="true" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="@string/message_CalcedMax"
         android:id="@+id/calcedMax"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/message_CalcedMax"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:visibility="invisible"
         android:layout_below="@+id/calcButton"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:ads="http://schemas.android.com/apk/res-auto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/linearLayout">
+
+
+    </LinearLayout>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/calcedMax"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="59dp"
+        android:visibility="visible"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/banner_ad_unit_id">
+
+    </com.google.android.gms.ads.AdView>
+
 
 </RelativeLayout>
